@@ -1,4 +1,4 @@
-import random
+import secrets
 import string
 import argparse
 
@@ -15,7 +15,7 @@ def generate_password(length, use_num, use_sym, use_up, use_low):
     if not char_pool:
         print("At least one character type must be selected. Exiting.")
         return None
-    password = ''.join(random.choice(char_pool) for _ in range(length))
+    password = ''.join(secrets.choice(char_pool) for _ in range(length))
     return password
 
 if __name__ == "__main__":
