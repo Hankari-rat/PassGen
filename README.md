@@ -1,4 +1,4 @@
-"# Password Generator"
+# Password Generator
 
 A command-line tool to generate secure random passwords with customizable options.
 
