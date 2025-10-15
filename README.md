@@ -1,56 +1,66 @@
-# Password Generator
+# PassGen - A Secure Password Generator
 
-A command-line tool to generate secure random passwords with customizable options.
+A simple, secure, and customizable command-line tool for generating cryptographically strong passwords.
+
+## A Note on Security
+
+This tool is built with security as the top priority. Unlike basic password generators that might use Python's standard `random` module (which is not suitable for cryptographic use), PassGen uses the `secrets` module. This ensures that every password is generated with cryptographically secure randomness sourced directly from the operating system's entropy pool, making them unpredictable and safe for use in any security-sensitive application.
 
 ## Features
 
-- Generate random passwords with customizable length
-- Include/exclude numbers, symbols, uppercase and lowercase letters
-- Command-line interface with easy-to-use options
-- Secure random generation using Python's random module
+- **Cryptographically Secure:** Utilizes Python's `secrets` module for unpredictable password generation.
+- **Highly Customizable:** Control password length and character set composition.
+- **Easy to Use:** Clean and intuitive command-line interface.
+- **Zero Dependencies:** Runs on any system with Python 3.6+ without needing any external packages.
+
+## Getting Started
+
+Since this tool uses only standard Python libraries, there is no complex installation process.
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Hankari-rat/passgen.git
+    cd passgen
+    ```
+
+2.  **Run the script:**
+    ```bash
+    python passgen.py [options]
+    ```
+
+That's it!
 
 ## Usage
 
-```bash
-python passgen.py [options]
-```
-
 ### Options
 
-- `-l, --length` : Set password length (default: 12)
-- `-n, --no-numbers` : Exclude numbers
-- `-s, --no-symbols` : Exclude symbols
-- `-u, --no-uppercase` : Exclude uppercase letters
-- `-w, --no-lowercase` : Exclude lowercase letters
+| Option             | Short | Description                                     |
+| ------------------ | ----- | ----------------------------------------------- |
+| `--length`         | `-l`  | Sets the desired password length (default: 16). |
+| `--no-uppercase`   | `-u`  | Excludes uppercase letters (`A-Z`).             |
+| `--no-lowercase`   | `-w`  | Excludes lowercase letters (`a-z`).             |
+| `--no-numbers`     | `-n`  | Excludes numbers (`0-9`).                       |
+| `--no-symbols`     | `-s`  | Excludes symbols (`!@#$%^&*` etc.).             |
 
 ### Examples
 
-Generate default password (12 characters, all types included):
+**1. Generate a default password (16 characters, all types included):**
 ```bash
 python passgen.py
 ```
 
-Generate a 16-character password without symbols:
+**2. Generate a 24-character password without symbols:**
 ```bash
-python passgen.py -l 16 -s
+python passgen.py --length 24 --no-symbols
 ```
-
-Generate password with only lowercase letters and numbers:
+  
+**3. Generate a password with only lowercase letters and numbers:**
 ```bash
-python passgen.py -s -u
+python passgen.py --no-uppercase --no-symbols
 ```
+  
 
-## Requirements
+### License
 
-- Python 3.x
-- argparse module (included in Python standard library)
-
-## Installation
-
-1. Clone the repository or download the script
-2. Make sure you have Python 3.x installed
-3. No additional packages required
-
-## License
-
-This project is open source and available under the MIT License." 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+code Code
