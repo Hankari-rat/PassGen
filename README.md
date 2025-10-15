@@ -63,4 +63,3 @@ python passgen.py --no-uppercase --no-symbols
 ### License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-code Code
