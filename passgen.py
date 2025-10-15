@@ -20,7 +20,7 @@ def generate_password(length, use_num, use_sym, use_up, use_low):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Random Password Generator")
-    parser.add_argument('-l', '--length', type=int, default=12, help='Length of the password default is 12')
+    parser.add_argument('-l', '--length', type=int, default=16, help='Length of the password default is 16')
     parser.add_argument('-n', '--no-numbers', action='store_false', help='Exclude numbers from the password')
     parser.add_argument('-s', '--no-symbols', action='store_false', help='Exclude symbols from the password')
     parser.add_argument('-u', '--no-uppercase', action='store_false', help='Exclude uppercase letters from the password')
